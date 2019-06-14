@@ -1,0 +1,181 @@
+puts "Hello Pryangan!"
+puts "How are you!"
+
+print "Hii"
+print "All"
+
+first_name = "Pryangan"
+last_name = "Chowdhury"
+age = 25
+height = 6.1
+
+puts "First Name is #{first_name}"
+puts "Last Name is #{last_name}"
+puts "Age is #{age}"
+puts "Height is #{height}"
+
+
+value1 = 5.3
+value1 = value1 / 2
+puts value1
+
+#pryangan
+=begin
+ervevrev
+ervqevrv
+erve
+=end
+
+Upper = 30
+Upper = 40
+
+puts 2**3
+
+
+x = 10
+y = 20
+
+x,y = y,x
+puts "#{x} #{y}"
+
+a,b,c = 10,20,30
+puts "#{a} #{b} #{c}"
+
+
+name = 'Pryangan\'s is cool'
+puts name
+
+puts 3.eql?(3.0)
+
+a = 42
+if a>10
+    puts "yes"
+end
+
+name = 'Pryangan'
+if name=='Pryangan'
+    puts "Ohh yeah"
+end
+
+last_name = 'Chowdhury'
+if name == 'Pryangan'
+    if last_name == 'Chowdhury'
+        puts "Hey Pryangan!"
+    end
+end
+
+age = 17
+if age >= 18
+    puts "welcome"
+else
+    puts "too young"
+end
+
+
+name = "Pryangan"
+
+if name == 'ram'
+    puts "ram"
+elsif name == "raj"
+    puts "raj"
+elsif name =='Pryangan'
+    puts "Hey Pryangan"
+else
+    puts "Not Found"
+end
+
+puts "yes" if 5==5
+puts "no" unless 5==4
+
+age = 17
+
+unless age >=18
+    puts "welcome"
+else
+    puts "too young"
+end
+
+
+a = 42
+b = 8
+if a > 7 && b < 11
+    puts "yes"
+end
+
+c = 2
+
+case c
+    when 1
+    puts 'one'
+    when 2
+    puts 'two'
+    when 3
+    puts 'three'
+end
+
+age = 5
+case age
+    when 1,2,3
+    puts 'child'
+    when 4,5
+    puts 'elder'
+end
+
+age = 18
+case age
+    when 1,2,3
+    puts 'young'
+    when 4,5
+    puts 'child'
+else
+    puts "Nothing"
+end
+   
+
+x = 0
+while x<10
+    puts x
+    x +=1
+end
+
+c = 0
+until c > 10
+puts c
+c += 2
+end
+
+a = (1..7).to_a
+puts a
+
+a = (1...7).to_a
+puts a
+
+a = ('a'..'z').to_a
+puts a
+
+age = 42
+
+case age
+    when 1..12
+    puts "child"
+    when 13..20
+    puts "youth"
+    when 21..60
+    puts "elder"
+else
+    puts "senior"
+end
+
+for i in (1..10)
+    puts i
+end
+
+for i in 1..10
+    break if i > 6
+    puts i
+end
+
+for i in 1..8
+    next if i%2 == 0
+    puts i
+end
