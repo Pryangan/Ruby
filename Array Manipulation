@@ -1,0 +1,40 @@
+a = [1,2,3]
+b = [4,5]
+res = a + b
+print res
+
+puts
+
+x = [1,2,3,4,5,6]
+y = [3,4,7,8,9]
+res = x - y
+print res
+
+puts
+
+c = [2,3,4,5]
+d = [3,4,7]
+res = d - c
+print res
+
+puts
+
+a = [2,3,7,8]
+b = [2,7,9]
+print a & b
+
+puts
+
+print a | b
+
+puts
+
+x = [1,2,3,4]
+rev = x.reverse
+print rev
+puts
+print x
+puts
+print x.reverse!
+puts
+print x
