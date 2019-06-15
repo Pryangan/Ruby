@@ -1,0 +1,19 @@
+text = "I am learning Ruby and It is fun!"
+val = text.downcase
+puts val
+puts text
+puts text.downcase!
+puts text
+
+text = "I am learning Ruby and It is fun!"
+text.downcase!
+freqs = {}
+freqs.default = 0
+
+text.each_char { |char|
+    freqs[char] += 1
+    }
+
+("a".."z").each {|x|
+    puts "#{x} : #{freqs[x]}"
+    }
