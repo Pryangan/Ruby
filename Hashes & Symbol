@@ -1,0 +1,26 @@
+x = {"raj" => 12,"mohan" => 34,"hari" => 45}
+print x
+puts
+print x["mohan"]
+
+puts
+
+y = {["rohan",23,5.6,"Kanpur"] => "Student",["Raj",23,5.7,"Goa"] => "Employee"}
+print y[["rohan",23,5.6,"Kanpur"]]
+puts
+
+z = {"Student1" => [12,34,54,67],"student2" => [23,76,45,34],"student3" => [45,54,34,76]}
+print z["student2"]
+
+puts
+
+r = :rony
+puts r
+
+z = {:student1 => [12,34,54,67],:student2 => [23,76,45,34],:student3 => [45,54,34,76]}
+print z[:student2]
+
+puts
+
+d = {ram:34,tuy:56,eiy:45}
+print d.values
