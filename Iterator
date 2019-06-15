@@ -1,0 +1,44 @@
+x = [2,3,4,5]
+
+x.each do |c|
+    puts c
+end
+
+puts
+
+sum = 0
+x.each do |y|
+    sum += y
+end
+
+puts sum
+
+puts
+
+val = {
+    :ram => 23,
+    :raj => 34,
+    :rohan => 45
+    }
+
+val.each do |key,value|
+    puts "#{key} = #{value}"
+end
+
+puts
+
+val.each { |key,value|
+    puts "#{key} = #{value}"
+    }
+
+puts
+
+10.times do 
+    puts "Hey!"
+end
+
+puts
+
+10.times {
+    puts "Hello!"
+    }
