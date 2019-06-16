@@ -1,0 +1,192 @@
+def say
+    puts "Hello!"
+end
+
+say
+
+def sqr(x)
+    puts x*x
+end
+
+sqr(4)
+
+def sum(a,b)
+    puts "Sum of #{a} and #{b} is #{a+b}"
+end
+
+sum(10,20)
+
+def rectangle(l,b,h)
+    puts "Area of Rectangle(#{l},#{b},#{h}) is #{l*b*h}"
+end
+
+x = 10
+y = 12
+z = 20
+
+rectangle(x,y,z)
+
+# Default Parameter
+
+def mul(a,b=8)
+    puts "Multication of #{a} and #{b} is #{a*b}"
+end
+
+x = 10
+
+mul(x)
+
+y =20
+
+mul(x,y)
+
+=begin
+we can also leave off the perentheses when using methods.
+=end
+
+def addValue a,b
+    puts "Addition od #{a} and #{b} is #{a+b}"
+end
+
+addValue 10,30
+
+def demo x = 4, y = 2
+    puts x**y
+end
+
+demo 5
+# output : 25
+
+def demo x = 4,y = 2
+    puts x**y
+end
+
+demo 5,3
+# output : 125
+
+def demo x = 4, y = 2
+    puts x**y
+end
+
+demo 
+# output : 16
+
+=begin 
+Optional Parameters
+We can also define methods that take any number of argument.
+=end
+
+def someThing(*p)
+    puts p
+end
+
+someThing(25,"Hello",true)
+
+
+def myMethod(a,b,*c)
+    puts "#{a}, #{b}, #{c}"
+end
+
+myMethod(23,"Hi",12,34,54,"All",true)
+
+def sum(x,y)
+    res = x + y
+    return res
+end
+
+value = sum(10,20)
+
+puts value
+
+def mul(x,y)
+    res = x*y
+    return "Multiplication of #{x} and #{y} is #{res}"
+end
+
+value = mul(12,10)
+
+puts value
+
+=begin
+We can return multiple values from a method by them with commas in the return statement.
+=end
+
+def squares(a,b,c)
+    return a*a, b*b, c*c
+end
+
+puts squares(2,3,4)
+
+=begin
+Even when we do not explicitly include a return statement in your method, Ruby always returns the evaluated result of the last line of the method 
+that is executed
+=end
+
+def demo(a,b)
+    a = b-2
+    b = a - 3
+end
+
+puts demo(5,6)
+
+=begin
+Chaining Methods
+Because all methods return a value, we can chain multiple methods together, as well as chain methods with iterators.
+=end
+
+def square(x)
+    x*x
+end
+
+square(4).times {puts "Hello!"}
+
+4.times {puts "Hi!"}
+
+# Methods as Arguments
+
+def add(a,b)
+    a+b # No need return keyword
+end
+
+def mul(a,b)
+    a*b
+end
+
+value  = mul(add(2,3),add(4,5))
+puts value
+
+# Variable Scope
+
+# Local Variable
+def calc(x)
+    ab = 2
+    puts x+ab
+end
+
+calc(4)
+
+# puts ab compiler error because it is a local variable of calc method
+
+# Global Variable
+# we use $ sign for Global variable
+$x = 40
+
+def change
+    $x = 8
+end
+
+change
+puts $x
+# output : 8
+
+# Recursion
+
+def fact(x)
+    if x<=1
+        1
+    else
+        x*fact(x-1)
+    end
+end
+
+puts fact(5)
