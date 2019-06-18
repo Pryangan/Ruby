@@ -1,0 +1,233 @@
+class Person  # class name always start with Capital letter
+    def initialize
+        puts "Hi there"    # initialize is like constructor of other Programming language
+    end
+end
+
+xyz = Person.new  # new is a method not keyword
+
+class Person
+    def initialize(name)
+        @name = name
+    end
+    def show_name
+        puts "Name is #{@name}"
+    end
+end
+
+xy = Person.new("Raj")
+xy.show_name
+
+class Person
+    def initialize(name,age)
+        @name = name
+        @age = age
+    end
+    def show_details
+        puts "Name is #{@name}"
+        puts "Age is #{@age}"
+    end
+end
+
+x = Person.new("Mohan",23)
+x.show_details
+
+# we can create class without initialize method
+class Dog
+    def bark
+        puts "Woof"
+    end
+end
+
+dog = Dog.new
+dog.bark
+
+class Person
+    def initialize(name)
+        @name = name
+    end
+    def get_name
+        puts @name
+    end
+    def set_name(name)
+        @name = name
+    end
+end
+
+a = Person.new("Rahul")
+a.get_name
+a.set_name("Hash")
+a.get_name
+
+class Person
+    def initialize(name)
+        @name = name
+    end
+    def get_name
+        puts @name
+    end
+    def set_name=(name) # = is like assignment operator in which we can store value in a variable but we can also use it in method
+        @name = name
+    end
+end
+
+b = Person.new("Ronny")
+b.get_name
+b.set_name = "Raaaj"  # method but work as assignment operator
+b.get_name
+
+# we can use same name for getter setter method
+
+class Person
+    def initialize(name)
+        @name = name
+    end
+    def name
+        puts @name
+    end
+    def name=(name)
+        @name = name
+    end
+end
+
+c = Person.new("Mohan")
+c.name
+c.name = "Tony"
+c.name
+
+class Person
+    
+    attr_accessor :name
+    attr_accessor :age  # no need getter setter method now
+    
+    def initialize(name,age)
+        @name = name
+        @age = age
+    end
+    def show_details
+        puts "Name is #{@name}"
+        puts "Age is #{@age}"
+    end
+end
+
+f = Person.new("Raju",34)
+f.name = "Mohan"
+f.age = 45
+f.show_details
+
+class Person
+    attr_accessor :name, :age
+    def initialize(name,age)
+        @name = name
+        @age = age
+    end
+    def change(n,a)
+        self.name = n
+        self.age = a
+    end
+    def show_details
+        puts "Name is #{self.name} \nAge is #{self.age}"
+    end
+end
+
+p = Person.new("Tony",23)
+p.change("eashu",78)
+p.show_details
+
+
+=begin
+Class Methods
+- Class Methods are methods we can call directly on the class itself, without having to instantiate any objects.
+=end
+
+class Person
+    def self.info
+        puts "A person is here!"
+    end
+end
+
+Person.info
+
+=begin
+Class Variables
+- Class variables are accessible to every object of a class. A class Variable belongs to the class, not the Objects.
+  we declare a class variable using two @ signs, for example @@name
+=end
+
+class Person
+    @@count = 0
+    def initialize
+        @@count +=1
+    end
+    def get_count
+        @@count
+    end
+end
+
+x = Person.new
+y = Person.new
+
+puts x.get_count
+# output is 2
+
+class Person
+    @@count = 0
+    def initialize
+        @@count +=1
+    end
+    def self.get_count
+        @@count
+    end
+end
+
+x = Person.new
+y = Person.new
+z = Person.new
+
+puts Person.get_count
+# output is 3
+
+=begin
+Class Constants
+- a class can also constants. Remember, constant variable do not change their value and start with a capital letter. It is common to have uppercase names for constants.
+=end
+
+class Calc
+    PI = 3.14
+end
+
+puts Calc::PI
+
+class Demo
+    PI = 3.14
+    Age = 5
+end
+
+puts Demo::PI
+puts Demo::Age
+
+=begin
+The to_s Method
+- The to_s method comes built-in with all classes.
+=end
+
+class Person
+    
+end
+
+p = Person.new
+puts p
+
+class Person
+    def initialize(name,age)
+        @name = name
+        @age = age
+    end
+    def to_s
+        "#{@name} is #{@age} old."
+    end
+end
+
+p =Person.new("Ram",25)
+
+puts p
