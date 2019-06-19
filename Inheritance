@@ -1,0 +1,124 @@
+=begin
+Inheritance
+- The < symbol is used to inherit a class from another class.
+=end
+
+class Animal
+    def initialize(name,color)
+        @name = name
+        @color = color
+    end
+    def speak
+        puts "Hi #{@name}..."
+        puts "Your #{@color} color is Awesome!"
+    end
+end
+
+class Dog < Animal
+end
+
+xyz = Dog.new("Ronie","Black")
+xyz.speak
+
+puts
+
+class Cat < Animal
+    attr_accessor :age
+    def speak
+        puts "ohh! You are #{@age} years old." # At this time only this line will show but if you want to show above line also so in this case we will use super keyword.
+    end
+end
+
+abc = Cat.new("Bob","Brown")
+abc.age = 3
+abc.speak
+
+puts
+
+=begin
+- super as method
+=end
+
+class Rat < Animal
+    attr_accessor :age
+    def speak
+        super
+        puts "ohh! You are #{@age} years old."
+    end
+end
+
+pqr = Rat.new("Bunny","White")
+pqr.age = 5
+pqr.speak
+
+=begin
+super is more commonly used in the initialize method.  [super as constructor]
+=end
+
+class Animal
+    def initialize(name)
+        @name = name
+    end
+end
+
+puts
+
+class Cat < Animal
+    def initialize(name,age)
+        super(name)
+        @age = age
+    end
+    def speak
+        puts "Hello #{@name}..."
+        puts "You are now #{@age} years old."
+    end
+end
+
+x = Cat.new("Monty",6)
+x.speak
+
+=begin
+Operator Overloading
+- Ruby allow us to overload operators so that we can perform operations such as adding two objects together.
+=end
+
+class Shape
+    attr_accessor :h,:w
+    def initialize(height,width)
+        self.h = height
+        self.w = width
+    end
+    def +(other)
+        Shape.new(self.h + other.h,self.w + other.w)
+    end
+end
+
+x = Shape.new(12,45)
+y = Shape.new(23,54)
+z = x + y
+
+puts z.h
+puts z.w
+
+=begin
+Access Modifier
+- Ruby provides the public,private, and protected access modifiers.
+  By default, all class methods(except initialize) are public.
+=end
+
+class Person
+    def initialize(age)
+        @age  = age
+    end
+    def show
+        puts "#{@age} years = #{days_lived} days"
+    end
+    
+    private
+    def days_lived
+        @age * 365
+    end
+end
+
+p = Person.new(42)
+p.show
