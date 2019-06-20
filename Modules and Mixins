@@ -1,0 +1,57 @@
+=begin
+Modules
+- A module is a collection of methods that can be used in other classes
+=end
+
+module Flyable
+    def fly
+        puts "I'm flying!"
+    end
+end
+
+class Vehicle
+end
+
+class Car < Vehicle
+end
+
+class Jet < Vehicle
+    include Flyable
+end
+
+class Plane < Vehicle
+    include Flyable
+end
+
+ob = Jet.new
+ob.fly
+
+=begin
+Mixins
+- The true power of mixins comes out when the code in the mixin starts to interact with code
+in the class that uses it. Ruby has a number of predefined mixins ready for us to use.
+=end
+
+class Cat
+    attr_accessor :name, :age
+    include Comparable  # Comparable is a default module
+    def initialize(n,a)
+        self.name = n
+        self.age = a
+    end
+    def <=>(other)
+        self.age <=> other.age
+    end
+end
+
+c1 = Cat.new("Bob", 3)
+c2 = Cat.new("Lucy",7)
+
+puts c1 < c2
+# output is true
+
+puts c1 > c2
+# output is false
+
+puts c1 == c2
+# output is false
