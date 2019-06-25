@@ -1,0 +1,37 @@
+=begin
+Structs
+ - In some cases, there is no need for defining a fully structured class. Sometimes we need just a group of attribute bundled together.
+Ruby provides a shortcut to bundle a number of attributes together called a Struct.
+=end
+
+Point = Struct.new(:x,:y)
+
+origin = Point.new(0,0)
+dest = Point.new(12,40)
+
+puts dest.y
+
+
+=begin
+OStruct
+- OpenStruct( or OStruct ) acts very similarly to Struct, except that it doesn't have a defined list of attributes.
+To use OStruct, weneed to include the corresponding library using the "require" statement.
+=end
+
+require "ostruct"
+
+person = OpenStruct.new
+person.name = "Raj"
+person.age = 56
+person.salary = 500000
+
+puts person.name
+
+
+# we can also initialize an OStruct using a hash.
+
+require "ostruct"
+
+person1 = OpenStruct.new(name:"Raju",age:57,salary:40000)
+
+puts person1.age
