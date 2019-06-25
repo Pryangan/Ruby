@@ -1,0 +1,62 @@
+=begin
+Creating Files
+- Ruby allows us to easily create and work with files by using the built-in File class.
+=end
+
+file = File.new("test.txt","w+")
+
+file.close
+
+
+# for open an existing file we can use open method instead new method
+
+file = File.open("test.txt","w+")
+
+
+=begin
+Writing Files
+- The puts and write methods can be used for writing content to a file.
+
+  The difference between the two is that puts adds a line break to the end of strings, while write does not.
+
+  we need to close the file after performing the operations.
+=end
+
+file = File.new("test.txt","w+")
+file.puts("Some text")
+file.close
+
+# Ruby can also automatically close the file.
+
+File.open("file.txt","w+"){
+    |file| file.puts("some text")
+}
+
+=begin
+Reading Files
+- To read the entire contents of a file the File.read method can be used.
+=end
+
+f = File.new("test.txt","w+")
+f.puts("a line of text")
+f.puts("another line of text")
+f.close
+
+puts File.read("text.txt")
+
+File.open("test.txt","a+"){
+    |file| file.puts("a line of text")
+    file.puts("another line of text")
+}
+
+File.readlines("test.txt").each{
+    |line| puts "---#{line}"
+}
+
+# we can delete a file using the File.delete method
+
+File.delete("test.txt")
+
+# The file? method provides an easy way of checking if the file exists
+
+File.open("test.txt") if File.file?("text.txt")
